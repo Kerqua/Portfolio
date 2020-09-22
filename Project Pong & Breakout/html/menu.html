@@ -1,0 +1,38 @@
+﻿<menu>
+    <header>
+        <h1><img src="assets/logo.png" class="logo" alt="R4Heal games" /></h1>
+        <div>
+            <ul>
+                <li data-bind="$Username"></li>
+                <li data-bind="$Date"></li>
+                <li data-bind="$Time"></li>
+            </ul>
+        </div>
+    </header>
+
+    <ul data-bind="$Actions" class="actions mainmenu">
+        <li class="template reserved" data-bind="data-focus:$Focus;data-selected:$Selected;data-imagetype:$ImageType">
+            <div>
+                <img data-bind="src:$Image" />
+                <p class="title">
+                    <a data-bind="href:$Endpoint"><span data-bind="t($Name)"></span></a>
+                </p>
+                <p class="category" data-bind="t($Category)">
+
+                </p>
+            </div>
+        </li>
+    </ul>
+</menu>
+
+<footer>
+    <ul>
+        <li><p><img src="assets/logos/europeseunie.png" /><img src="assets/logos/opoost.png" /></p></li>
+        <li><p><img src="assets/logos/radboudumc.png" /></p></li>
+        <li><p><img src="assets/logos/yellowriders.png" /></p></li>
+        <li><p><img src="assets/logos/relitech.png" /></p></li>
+        <li><p><img src="assets/logos/arbolai.png" /></p></li>
+        <li><p><img src="assets/logos/big4data.png" /></p></li>
+        <li><p><img src="assets/logos/centre4moods.png" /></p></li>
+    </ul>
+</footer>

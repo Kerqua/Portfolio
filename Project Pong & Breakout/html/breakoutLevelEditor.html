@@ -1,0 +1,97 @@
+﻿<div id="canvas_container" class="canvas" style="">
+    <canvas>
+
+    </canvas>
+    
+</div>
+
+<div id="sidebar" data-bind="$Sidebar" style="position:absolute;top:0%;left:0%;width:20%;background-color:#7df9ff;height:100vh;">
+    <div style="height:10vh;margin:0;">
+        <p>Name:</p>
+        <input id="name" class="inputText" data-bind="$name" />
+    </div>
+    <div id="templates" style="max-height:35vh;margin:0;">
+        <div style="width:100%;height:3vh;background-color:#000000;">Bricks</div>
+        <div style="height:28vh;overflow:auto;">
+            <ul data-bind="$bricks" style="list-style:none;padding:0;">
+                <li class="reserved template" style="float:left;width:25%;margin:6.25px">
+                    <div>
+                        <img class="templateImg" data-bind="src: $assetsrc" style="width:100%;border: 0px solid #000000;border-radius: 7px;" />
+                        <p data-bind="$id" style="display:none;"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button style="height:4vh;border-width:5px;" id="new">New</button>
+        <button style="height:4vh;border-width:5px;" id="eraser">Eraser</button>
+    </div>
+    <div id="selectedBrick" data-bind="$getSelectedBrick" style="max-height:25vh;margin:0;">
+        <div style="width:100%;height:3vh;background-color:#000000;">Brick Properties</div>
+        <p>color:</p>
+        <select class="inputSelect" data-bind="$color">
+            <option value="black">black</option>
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+            <option value="grey">grey</option>
+            <option value="orange">orange</option>
+            <option value="pink">pink</option>
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+        </select>
+        <br />
+        <p>health:</p>
+        <input class="inputText" type="number" data-bind="$health" min="1" max="3" />
+        <br />
+        <p>points:</p>
+        <input class="inputText" type="number" data-bind="$points" min="0" />
+        <br />
+    </div>
+    <div id="borders" style="max-height:25vh;margin:0;">
+        <div style="width:100%;height:3vh;background-color:#000000;">Level Properties</div>
+        <p>width:</p>
+        <input class="inputText" type="number" data-bind="$width" min="0" />
+        <p>height:</p>
+        <input class="inputText" type="number" data-bind="$height" min="0" />
+        <br />
+        <br />
+        <div data-bind="$border">
+            <p>Top:</p>
+            <input class="inputText" type="number" data-bind="$top" min="0" />
+            <p>Right:</p>
+            <input class="inputText" type="number" data-bind="$right" min="0" />
+            <p>Bottom:</p>
+            <input class="inputText" type="number" data-bind="$bottom" min="0" />
+            <p>Left:</p>
+            <input class="inputText" type="number" data-bind="$left" min="0" />
+        </div>
+
+    </div>
+</div>
+
+<ul data-bind="$Actions" class="actions" id="headermenu">
+    <li class="template reserved menu menubutton" data-template-condition="$Group == 1" data-bind="data-selected:$Selected;data-focus:$Focus">
+        <div class="pausebutton">
+            <h1 data-bind="t('app.mainmenu')"><button>Menu</button></h1>
+        </div>
+        <menu class="mainmenu">
+            <div class="game-end victory time hide">
+                <h1 data-bind="t('game.victory')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.time')">Game won in</span> <span class="time" data-bind="$PlaytimeMsStr"></span></p>
+            </div>
+            <div class="game-end victory score hide">
+                <h1 data-bind="t('game.victory')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.score')">Your score is </span> <span class="score" data-bind="$Score"></span></p>
+            </div>
+            <div class="game-end loss time hide">
+                <h1 data-bind="t('game.loss')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.time')">Game lost in</span> <span class="time" data-bind="$PlaytimeMsStr"></span></p>
+            </div>
+            <div class="game-end loss score hide">
+                <h1 data-bind="t('game.loss')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.score')">Your score is</span> <span class="score" data-bind="$Score"></span></p>
+            </div>
+            <h1 data-bind="t($Name)">MyGame</h1>
+            <ul data-bind="$children" class="actions" data-template="#ActionTemplates li"></ul>
+        </menu>
+    </li>
+</ul>

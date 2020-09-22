@@ -1,0 +1,31 @@
+﻿<div id="canvas_container" class="canvas">
+    <canvas></canvas>
+</div>
+
+<ul data-bind="$Actions" class="actions" id="headermenu">
+    <li class="template reserved menu menubutton" data-template-condition="$Group == 1" data-bind="data-selected:$Selected;data-focus:$Focus">
+        <div class="pausebutton">
+            <h1 data-bind="t('app.mainmenu')"><button>Menu</button></h1>
+        </div>
+        <menu class="mainmenu">
+            <div class="game-end victory time hide">
+                <h1 data-bind="t('game.victory')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.time')">Game won in</span> <span class="time" data-bind="$PlaytimeMsStr"></span></p>
+            </div>
+            <div class="game-end victory score hide">
+                <h1 data-bind="t('game.victory')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.score')">Your score is </span> <span class="score" data-bind="$Score"></span></p>
+            </div>
+            <div class="game-end loss time hide">
+                <h1 data-bind="t('game.loss')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.time')">Game lost in</span> <span class="time" data-bind="$PlaytimeMsStr"></span></p>
+            </div>
+            <div class="game-end loss score hide">
+                <h1 data-bind="t('game.loss')">Congratulations</h1>
+                <p><span data-bind="t('game.finished.score')">Your score is</span> <span class="score" data-bind="$Score"></span></p>
+            </div>
+            <h1 data-bind="t($Name)">MyGame</h1>
+            <ul data-bind="$children" class="actions" data-template="#ActionTemplates li"></ul>
+        </menu>
+    </li>
+</ul>

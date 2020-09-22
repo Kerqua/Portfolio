@@ -1,2 +1,2 @@
 # Portfolio
-A collection of code samples
+Een verzameling van verschillende stukken code die ik heb gemaakt.

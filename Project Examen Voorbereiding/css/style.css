@@ -1,0 +1,86 @@
+#formLogin{
+	margin:auto;
+	
+	width:50%;
+	padding:20px;
+	background-color:#aaaaaa;
+}
+
+.inputText{
+	margin:auto;
+	width:100%;
+}
+
+#imageLogin{
+	width:100%;
+	margin:auto;
+}
+
+#header{
+	margin:auto;
+	width:100%;
+	border: 1px solid black;
+}
+
+#header > div{
+	float:right;
+	overflow:hidden;
+	border:2px solid green;
+	
+	width:80%;
+}
+
+#header > div > a{
+	float:left;
+	margin:20px;
+}
+
+#header > div > a > div{
+	height:inherit;
+	
+}
+
+table{
+	border-collapse:collapse;
+	width:100%;
+}
+
+table > tbody > tr{
+	width:100%;
+}
+
+table > tbody > tr,
+table > tbody > tr > th,
+table > tbody > tr > td{
+	border: 1px solid #aaaaaa;
+}
+
+.validationError {
+	color: #ff0000;
+}
+
+.tableFunctie{
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+}
+
+.agendaItem{
+	background-color:#888888;
+}
+
+.agendaItemInfo{
+	position:absolute;
+	background-color: #888888;
+	border:2px solid #000000;
+	width:20vw;
+	height:20vh;
+}
+
+.agendaItem .agendaItemInfo {
+	visibility:hidden;
+}
+
+.agendaItem:hover .agendaItemInfo {
+	visibility:visible;
+}

@@ -1,2 +1,2 @@
-# Portfolio
-Een verzameling van verschillende stukken code die ik heb gemaakt.
+# projecten
+Een verzameling van verschillende stukken code en projecten die ik heb gemaakt.
